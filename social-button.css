@@ -1,0 +1,74 @@
+/* social-button.css */
+
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+.content {
+    text-align: center;
+    padding: 50px;
+}
+
+/* Estilos para el botón flotante */
+.social-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4267B2;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.social-button img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Efecto hover */
+.social-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsividad */
+@media (max-width: 600px) {
+    .social-button {
+        width: 50px;
+        height: 50px;
+    }
+
+    .social-button img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media (max-width: 400px) {
+    .social-button {
+        width: 45px;
+        height: 45px;
+    }
+
+    .social-button img {
+        width: 20px;
+        height: 20px;
+    }
+}
+
