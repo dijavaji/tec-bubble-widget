@@ -14,18 +14,16 @@ body {
     line-height: 1.6;
 }
 
-.content {
-    text-align: center;
+.container {
     padding: 50px;
 }
 
-/* Estilos para el botón flotante */
-.social-button {
+/* Estilos para el botón flotante utilizando Bootstrap */
+#social-btn {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #4267B2;
-    border-radius: 50%;
+    bottom: 20px; /* Distancia desde el fondo */
+    right: 20px;  /* Distancia desde la derecha */
+    background-color: #4267B2; /* Color de fondo de Facebook */
     width: 60px;
     height: 60px;
     display: flex;
@@ -33,42 +31,28 @@ body {
     align-items: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    z-index: 1000;
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
+    text-decoration: none; /* Elimina el subrayado */
 }
 
-.social-button img {
-    width: 30px;
-    height: 30px;
-}
-
-/* Efecto hover */
-.social-button:hover {
-    transform: scale(1.1);
+/* Efecto hover con Bootstrap */
+#social-btn:hover {
+    transform: scale(1.1); /* Efecto de aumento */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Responsividad */
 @media (max-width: 600px) {
-    .social-button {
+    #social-btn {
         width: 50px;
         height: 50px;
-    }
-
-    .social-button img {
-        width: 25px;
-        height: 25px;
     }
 }
 
 @media (max-width: 400px) {
-    .social-button {
+    #social-btn {
         width: 45px;
         height: 45px;
-    }
-
-    .social-button img {
-        width: 20px;
-        height: 20px;
     }
 }
 
