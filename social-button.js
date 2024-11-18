@@ -10,8 +10,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Crear la imagen del ícono de Facebook
     const img = document.createElement('img');
-    img.src = "https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg";
-    img.alt = "Facebook";
+    img.src = "./public/assets/img/icon_chatbot.svg";
+    img.alt = "chat-bot";
     img.width = 30;  // Tamaño de la imagen
     img.height = 30;
 
@@ -21,4 +21,3 @@ document.addEventListener('DOMContentLoaded', function() {
     // Agregar el botón al cuerpo del documento (al final de la página)
     document.body.appendChild(socialBtn);
 });
-
