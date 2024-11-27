@@ -1,5 +1,13 @@
 /* social-button.css */
 
+/* styles.css */
+:root {
+    --primary-color: #E0E0E0;
+    --secondary-color: #FFFFFF;
+    --background-color: #f8f9fa;
+    --text-color: #212529;
+}
+
 /* Reset general */
 * {
     margin: 0;
@@ -14,16 +22,12 @@ body {
     line-height: 1.6;
 }
 
-.container {
-    padding: 50px;
-}
-
 /* Estilos para el botón flotante utilizando Bootstrap */
 #social-btn {
     position: fixed;
     bottom: 20px; /* Distancia desde el fondo */
     right: 20px;  /* Distancia desde la derecha */
-    background-color: #4267B2; /* Color de fondo de Facebook */
+    background-color: transparent; /* Color de fondo de #4267B2*/
     width: 60px;
     height: 60px;
     display: flex;
@@ -33,12 +37,124 @@ body {
     transition: all 0.3s ease;
     z-index: 1000; /* Asegura que esté encima de otros elementos */
     text-decoration: none; /* Elimina el subrayado */
+    border: none;
 }
 
 /* Efecto hover con Bootstrap */
 #social-btn:hover {
     transform: scale(1.1); /* Efecto de aumento */
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.chat-container {
+    display: none;
+    position: absolute;
+    bottom: 80px;
+    right: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    max-height: 500px;
+    flex-direction: column;
+    background: radial-gradient(circle at 100% 100%, #ffffff 0, #ffffff 18px, transparent 18px) 0% 0% / 20px 20px no-repeat, radial-gradient(circle at 0 100%, #ffffff 0, #ffffff 18px, transparent 18px) 100% 0% / 20px 20px no-repeat, radial-gradient(circle at 100% 0, #ffffff 0, #ffffff 18px, transparent 18px) 0% 100% / 20px 20px no-repeat, radial-gradient(circle at 0 0, #ffffff 0, #ffffff 18px, transparent 18px) 100% 100% / 20px 20px no-repeat, linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 4px) calc(100% - 40px) no-repeat, linear-gradient(#ffffff, #ffffff) 50% 50% / calc(100% - 40px) calc(100% - 4px) no-repeat, linear-gradient(281deg, #5448da 0%, #1AC5F3 100%);
+    border-radius: 20px;
+    padding: 1px;
+    box-sizing: border-box;
+    margin: 0 20px 0px 0;
+    height: 440px;
+}
+
+.chat-container.active {
+    display: flex;
+}
+
+.chat-header {
+    background-color: #E5E5E5CC;
+    color: #fff;
+    padding: 1rem;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-header h1 {
+    font-size: 1.2rem;
+    margin: 0;
+    background: linear-gradient(to right, #1AC5F3 0%, #5448DA 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.chat-close {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    max-height: 300px;
+}
+
+.message {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    max-width: 80%;
+}
+
+.message.user {
+    background-color: var(--primary-color);
+    align-self: flex-end;
+    margin-left: auto;
+    border-radius: 10px 10px 0px 10px;
+}
+
+.message.bot {
+    background-color: var(--secondary-color);
+    color: #000000;
+    border-radius: 10px 10px 10px 0px;
+}
+
+.chat-input-form {
+    display: flex;
+    padding: 1rem;
+    background: #F2F2F2;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.chat-input-form input {
+    flex-grow: 1;
+    padding: 0.5rem;
+    border: 1px solid #ced4da;
+    border-radius: 20px;
+    font-size: 1rem;
+}
+
+.chat-input-form button {
+  position: absolute;
+  right: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.chat-input-form button:hover {
+    background-color: #0056b3;
+}
+
+.chat-input-form img {
+    right: 25px;
+    position: absolute;
+    top: -5px;
+    transform: translateY(50%);
+    cursor: pointer;
 }
 
 /* Responsividad */
@@ -55,4 +171,3 @@ body {
         height: 45px;
     }
 }
-
