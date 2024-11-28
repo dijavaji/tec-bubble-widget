@@ -115,16 +115,27 @@ document.addEventListener('DOMContentLoaded', function() {
       const messageText = messageInput.value.trim();
 
       if (messageText !== '') {
-          // Crear el nuevo mensaje y Agregalo a la vista
-          const newMessage = document.createElement('div');
-          newMessage.classList.add('message', 'user');
-          newMessage.innerText = messageText;
-
-          chatMessages.appendChild(newMessage);
-          chatMessages.scrollTop = chatMessages.scrollHeight; // Mantener el scroll hacia abajo
-
-          // Limpiar el input
-          messageInput.value = '';
+        createMessage(message, true);
+        messageInput.value = '';
+        // Simular respuesta de la API (reemplazar con llamada real a sendMessageToAPI)
+        const botResponse = await new Promise(resolve => {
+            setTimeout(() => {
+                resolve(`Respuesta simulada: "${message}"`);
+            }, 1000);
+        });
+        createMessage(botResponse);
       }
   }
+
+  // Funcion para crear un nuevo mensaje en el chat
+  function createMessage(content, isUser = false) {
+     const messageElement = document.createElement('div');
+     messageElement.classList.add('message');
+     messageElement.classList.add(isUser ? 'user' : 'bot');
+     messageElement.textContent = content;
+     chatMessages.appendChild(messageElement);
+     chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+
 });
