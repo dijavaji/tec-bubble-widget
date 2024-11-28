@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
   chatWidget.classList.add('chat-widget');
   chatWidget.id = 'chatWidget';
 
-  // Crear el botón flotante
+  // Crear el boton flotante
   const socialBtn = document.createElement('button');
   socialBtn.id = 'social-btn';
   socialBtn.classList.add('btn', 'btn-primary', 'shadow-lg', 'justify-content-center', 'align-items-center', 'social-btn');
@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   socialBtn.appendChild(chatWidgetButtonIcon);
 
-  // Agregar el botón flotante al contenedor principal
+  // Agregar el boton flotante al contenedor principal
   chatWidget.appendChild(socialBtn);
 
   // Crear el contenedor del chat
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
   chatClose.id = 'chatClose';
   chatClose.innerText = '×';
 
-  // Añadir los elementos al header del chat
+  // Agrega los elementos al header del chat
   chatHeader.appendChild(chatHeaderIcon);
   chatHeader.appendChild(chatTitle);
   chatHeader.appendChild(chatClose);
@@ -83,19 +83,19 @@ document.addEventListener('DOMContentLoaded', function() {
   sendButtonIcon.src = 'https://raw.githubusercontent.com/Praxis-Innovacion/tec-bubble-embed/bffa0d745e7e6f70982cda04cf8b85700b3a43be/public/assets/img/send10.svg';
   sendButtonIcon.alt = 'Ejecutar';
   sendButtonIcon.id = 'executeBtn';
-  sendButtonIcon.onclick = ejecutarAccion; // Asegúrate de definir `ejecutarAccion()` en tu código
+  sendButtonIcon.onclick = ejecutarAccion; //
 
   sendButton.appendChild(sendButtonIcon);
   messageInputWrapper.appendChild(messageInput);
   messageInputWrapper.appendChild(sendButton);
   chatForm.appendChild(messageInputWrapper);
 
-  // Añadir los elementos al contenedor del chat
+  // Agrega los elementos al contenedor del chat
   chatContainer.appendChild(chatHeader);
   chatContainer.appendChild(chatMessages);
   chatContainer.appendChild(chatForm);
 
-  // Añadir el chatWidget (que contiene el botón flotante y el contenedor del chat) al body
+  // Agrega el chatWidget (que contiene el boton flotante y el contenedor del chat) al body
   document.body.appendChild(chatWidget);
   document.body.appendChild(chatContainer);
 
@@ -108,13 +108,14 @@ document.addEventListener('DOMContentLoaded', function() {
       chatContainer.classList.remove('active');
   });
 
-  // Función de acción del botón "enviar"
-  function ejecutarAccion() {
-      // Lógica para el botón de enviar, como enviar el mensaje
+  // Funcion de accion del boton "enviar"
+  function ejecutarAccion(event) {
+     event.preventDefault(); // Evita que el formulario se envie
+      // Logica para el boton de enviar, como enviar el mensaje
       const messageText = messageInput.value.trim();
 
       if (messageText !== '') {
-          // Crear el nuevo mensaje y añadirlo a la vista
+          // Crear el nuevo mensaje y Agregalo a la vista
           const newMessage = document.createElement('div');
           newMessage.classList.add('message', 'user');
           newMessage.innerText = messageText;
