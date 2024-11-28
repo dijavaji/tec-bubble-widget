@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
   socialBtn.classList.add('btn', 'btn-primary', 'shadow-lg', 'justify-content-center', 'align-items-center', 'social-btn');
 
   const chatWidgetButtonIcon = document.createElement('img');
-  chatWidgetButtonIcon.src = './assets/img/icon_chatbot.svg';
+  chatWidgetButtonIcon.src = './public/assets/img/icon_chatbot.svg';
   chatWidgetButtonIcon.alt = 'chat';
   chatWidgetButtonIcon.id = 'chatWidgetButtonIcon';
   chatWidgetButtonIcon.style.width = '51.82px';
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
   chatHeader.classList.add('chat-header');
 
   const chatHeaderIcon = document.createElement('img');
-  chatHeaderIcon.src = './assets/img/icon_chatbot.svg';
+  chatHeaderIcon.src = './public/assets/img/icon_chatbot.svg';
   chatHeaderIcon.alt = 'chat';
   chatHeaderIcon.id = 'chatWidgetButtonIcon';
   chatHeaderIcon.style.width = '33.12px';
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
   sendButton.type = 'submit';
 
   const sendButtonIcon = document.createElement('img');
-  sendButtonIcon.src = './assets/img/send10.svg';
+  sendButtonIcon.src = './public/assets/img/send10.svg';
   sendButtonIcon.alt = 'Ejecutar';
   sendButtonIcon.id = 'executeBtn';
   sendButtonIcon.onclick = ejecutarAccion; // Asegúrate de definir `ejecutarAccion()` en tu código
