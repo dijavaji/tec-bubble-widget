@@ -109,18 +109,18 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Funcion de accion del boton "enviar"
-  function ejecutarAccion(event) {
+  async function ejecutarAccion(event) {
      event.preventDefault(); // Evita que el formulario se envie
       // Logica para el boton de enviar, como enviar el mensaje
       const messageText = messageInput.value.trim();
 
       if (messageText !== '') {
-        createMessage(message, true);
+        createMessage(messageText, true);
         messageInput.value = '';
         // Simular respuesta de la API (reemplazar con llamada real a sendMessageToAPI)
         const botResponse = await new Promise(resolve => {
             setTimeout(() => {
-                resolve(`Respuesta simulada: "${message}"`);
+                resolve(`Respuesta simulada: "${messageText}"`);
             }, 1000);
         });
         createMessage(botResponse);
