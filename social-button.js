@@ -109,22 +109,33 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // Funcion de accion del boton "enviar"
-  function ejecutarAccion(event) {
+  async function ejecutarAccion(event) {
      event.preventDefault(); // Evita que el formulario se envie
       // Logica para el boton de enviar, como enviar el mensaje
       const messageText = messageInput.value.trim();
 
       if (messageText !== '') {
-          // Crear el nuevo mensaje y Agregalo a la vista
-          const newMessage = document.createElement('div');
-          newMessage.classList.add('message', 'user');
-          newMessage.innerText = messageText;
-
-          chatMessages.appendChild(newMessage);
-          chatMessages.scrollTop = chatMessages.scrollHeight; // Mantener el scroll hacia abajo
-
-          // Limpiar el input
-          messageInput.value = '';
+        createMessage(messageText, true);
+        messageInput.value = '';
+        // Simular respuesta de la API (reemplazar con llamada real a sendMessageToAPI)
+        const botResponse = await new Promise(resolve => {
+            setTimeout(() => {
+                resolve(`Respuesta simulada: "${messageText}"`);
+            }, 1000);
+        });
+        createMessage(botResponse);
       }
   }
+
+  // Funcion para crear un nuevo mensaje en el chat
+  function createMessage(content, isUser = false) {
+     const messageElement = document.createElement('div');
+     messageElement.classList.add('message');
+     messageElement.classList.add(isUser ? 'user' : 'bot');
+     messageElement.textContent = content;
+     chatMessages.appendChild(messageElement);
+     chatMessages.scrollTop = chatMessages.scrollHeight;
+  }
+
+
 });
