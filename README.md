@@ -26,13 +26,15 @@ To include the widget on your website, follow these steps:
 
 1. Include the JavaScript file in your HTML:
    ```html
-   <script src="https://cdn.jsdelivr.net/gh/dijavaji/tec-bubble-widget@develop/social-button.js"></script>
-   <link rel="stylesheet" href="path-to-social-button.css">
+    <!-- Cargar el archivo JS personalizado desde el CDN technoloqie-->
+    <script src="https://cdn.jsdelivr.net/gh/dijavaji/tec-bubble-widget@develop/tec-chat-widget.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/dijavaji/tec-bubble-widget@develop/tec-chat-widget.css">
    ```
 
 2. Add the following placeholder where the widget should appear:
    ```html
-   <div id="chat-widget-container"></div>
+    <!-- technoloqie Chatbot Widget -->
+    <div id="chat-widget-container"></div>
    ```
 
 ### Via NPM (Coming Soon)
